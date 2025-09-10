@@ -7,7 +7,6 @@ const body = document.querySelector('#tableBody');
 const form = document.querySelector('#recordForm');
 let editIndex = null;
 
-// Render table
 function render() {
   body.innerHTML = "";
   records.forEach((entry, i) => {
@@ -25,7 +24,7 @@ function render() {
   });
 }
 
-// Handle form submit
+
 form.addEventListener("submit", e => {
   e.preventDefault();
   const id = +document.getElementById("uid").value;
@@ -38,12 +37,12 @@ form.addEventListener("submit", e => {
   }
 
   if (editIndex !== null) {
-    // Update existing record
+    
     records[editIndex] = { id, name, email };
     editIndex = null;
     form.querySelector("button").textContent = "Add";
   } else {
-    // Add new record
+   
     records.push({ id, name, email });
   }
 
@@ -51,7 +50,7 @@ form.addEventListener("submit", e => {
   form.reset();
 });
 
-// Edit record (inline form fill)
+
 function editRecord(index) {
   let current = records[index];
   document.getElementById("uid").value = current.id;
@@ -62,7 +61,7 @@ function editRecord(index) {
   form.querySelector("button").textContent = "Update";
 }
 
-// Delete record
+
 function removeRecord(i) {
   if (confirm("Delete this entry?")) {
     records.splice(i, 1);
@@ -70,5 +69,6 @@ function removeRecord(i) {
   }
 }
 
-// Initial render
+
 render();
+
