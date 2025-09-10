@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JSON Data Manager</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h2>📋 JSON Data Manager</h2>
+
+    <!-- Input Form -->
+    <form id="recordForm" class="form-box">
+      <input type="number" id="uid" placeholder="ID" required>
+      <input type="text" id="uname" placeholder="Name" required>
+      <input type="email" id="uemail" placeholder="Email" required>
+      <button type="submit" class="btn add-btn">Add</button>
+    </form>
+
+    <!-- Records Table -->
+    <table>
+      <thead>
+        <tr>
+          <th>Id</th>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Options</th>
+        </tr>
+      </thead>
+      <tbody id="tableBody"></tbody>
+    </table>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
